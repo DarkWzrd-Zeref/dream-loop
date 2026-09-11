@@ -5,39 +5,41 @@ This fork is the AREA 67 owned copy. Keep that attribution on every copy.
 
 Dream Loop is a **process**, not a renderer. Do **not** replace AREA 67 `World3D` with the Vesper / Forgotten Court Three.js demo.
 
-Install from this repo after Skill Altar registration, or keep using `npx skills add achimala/dream-loop` and apply this overlay.
-
 ## Mode (do not mix Plus and Pro)
 
 AREA 67 uses **Plus-adapted** only. Do not read `references/pro-mode/workflow.md` for hub work.
 
+Zeref 2026-09-11 18:16 ET role flip:
+
 | Role | Seat | Job |
 | --- | --- | --- |
 | Director | Zeref | Art OK / live deploy |
-| Manager + critic | grok-heavy | Orchestrate, dream `target.png`, score live vs target |
-| Lead coder / worker | cursor-ultra | Close **one** visual gap per pass |
+| Manager, processor, shipper | cursor-ultra | Clock in, radio, packets, critic handoff, PRs, live ship |
+| Artist + critic | grok-heavy | Dream `target.png`, score live vs target |
+| Coder | claude | **Code only.** One visual gap per handoff. No radio strategy, no deploy, no skill register |
 | Target images | Grok Imagine | Exact in-engine screenshot, not concept art |
 
 No Fal / Tripo / Trellis until Zeref gives keys.
 No Blender until Claude Friday / keys exist. Do not invent Claude `kind.{sha12}.png` hashes.
 
-Original Plus says the orchestrator should not be a huge model and should spawn worker subagents. AREA 67 maps that to **Heavy orchestrates, Cursor is the worker**. Cursor must not run the Dream Loop skill as if it were both judge and builder.
+Claude never runs Dream Loop as judge + builder. Cursor never writes the slice. Heavy never merges.
 
 ## Loop
 
 Working files live in the hub repo as `.dream-loop/` (gitignored). Lock `target.png` before coding.
 
-0. Clock in `/mcp/cursor`. `whoami` + `hub_sync`. Report work on `project-area67`.
-1. Screenshot **LIVE** campus: https://status-board-production-806b.up.railway.app
+0. Cursor clocks `/mcp/cursor`. Claude clocks `/mcp/claude`. Heavy clocks `/mcp/grok-heavy`.
+1. Cursor screenshots **LIVE** campus: https://status-board-production-806b.up.railway.app
 2. Heavy dreams `target.png` from **that** screenshot (upgrade graphics, keep layout).
-3. Cursor closes **one** visual gap in `bot-ops-status-board`: materials / lighting / sprites / CSS tokens only.
-4. Heavy critic vs target, gated rubric: composition 0-3, lighting 0-3, materials 0-3, details 0-1.
-5. Zeref OK → live deploy **that slice only**.
-6. Repeat one gap at a time. Stop after 3 passes unless Zeref says continue.
+3. Cursor posts `CLAUDE-HANDOFF-00N` with exact files, freeze list, and done-when.
+4. Claude codes **one** visual gap: materials / lighting / sprites / CSS tokens only. Then stops and radios `HANDOFF-BACK`.
+5. Cursor reviews, processes, opens PR, asks Heavy critic.
+6. Zeref OK → Cursor ships that slice live.
+7. Repeat one gap at a time. Stop after 3 passes unless Zeref says continue.
 
 If the product already exists, never generate a divergent fantasy scene. Refine the live screenshot.
 
-## First slice
+## First slice (after skill lock + handoff)
 
 Campus lighting + wet-ground / night glass only. Not 25 new station meshes. Not HUD layout moves.
 
@@ -76,32 +78,13 @@ Do not deploy AREA 67 from **this** skill repo.
 
 Look-dev: night classified campus. Gold key from the Well. Teal rim from comms. Glass + stone, not flat boxes. Pals stay readable chips.
 
-## Artist packet
+## Skill lock
 
-**Task 1 (this repo): none.** Fork/copy does not need art.
-
-**Before visual slice 1, Cursor needs exactly:**
-
-1. `live-campus.png` — screenshot of current live hub (Cursor can capture).
-2. `.dream-loop/target.png` — Heavy Imagine upgrade of that shot, same camera/layout.
-3. This overlay's night palette unless Heavy issues a replacement.
-
-**Not needed for slice 1:** recut-6 zip, station stills, new meshes, Fal keys, Claude GLB/PNG pack.
-
-## Skill Altar record (Heavy registers)
-
-```json
-{
-  "id": "dream-loop",
-  "title": "Dream Loop",
-  "kind": "visual-iteration",
-  "source": "https://github.com/achimala/dream-loop",
-  "owned": "https://github.com/DarkWzrd-Zeref/dream-loop",
-  "method": "screenshot-live → Imagine target → Cursor codes one gap → Heavy critic → live slice"
-}
-```
+Repo: https://github.com/DarkWzrd-Zeref/dream-loop
+Claude packet: [packets/A67-DREAMLOOP-CLAUDE.json](packets/A67-DREAMLOOP-CLAUDE.json)
+Altar record: [packets/SKILL-ALTAR.json](packets/SKILL-ALTAR.json)
 
 ## Exit
 
-- Score >= 8 on the current slice and Zeref OK: ship live, stop or start the next gap.
+- Score >= 8 on the current slice and Zeref OK: Cursor ships live, stop or start the next gap.
 - Same named gap twice: stop and ask Zeref. Do not grind tokens.
