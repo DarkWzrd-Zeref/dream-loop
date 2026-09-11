@@ -1,3 +1,17 @@
+# AREA 67 owned copy
+
+This is **DarkWzrd-Zeref/dream-loop**, a fork of [achimala/dream-loop](https://github.com/achimala/dream-loop) (MIT, by [@anshuc](https://x.com/anshuc)).
+
+AREA 67 uses this as a **skill / process**, not as a replacement renderer. Do not replace the live campus `World3D` with the Vesper Three.js demo.
+
+AREA 67 operating overlay: [AREA67.md](AREA67.md)
+
+- Owned copy: https://github.com/DarkWzrd-Zeref/dream-loop
+- Upstream: https://github.com/achimala/dream-loop
+- Live hub: https://status-board-production-806b.up.railway.app
+
+---
+
 # dream-loop
 
 By [@anshuc](https://x.com/anshuc).
@@ -13,6 +27,8 @@ An agent skill that builds a game, app, or scene with impressive visuals, by cre
 ## Installation
 
 `npx skills add achimala/dream-loop`, or clone into your agent's skills directory, or paste the link into your agent and tell it to figure it out.
+
+AREA 67: point Skill Altar at this repository and follow [AREA67.md](AREA67.md).
 
 ## Prerequisites
 

@@ -1,6 +1,6 @@
 ---
 name: dream-loop
-description: Build a game or app from a description so that a live screenshot matches a generated rendering. Use when the user says "dream loop" or asks for something built to a very high level of graphical fidelity.
+description: Build a game or app from a description so that a live screenshot matches a generated rendering. Use when the user says "dream loop" or asks for something built to a very high level of graphical fidelity. For AREA 67 / the hub, also load AREA67.md.
 license: MIT
 ---
 
@@ -8,7 +8,12 @@ license: MIT
 
 This is a process for you to autonomously build extremely impressive visuals, especially for 3D scenes (e.g. in a game or app).
 
+# AREA 67
+
+If you are working on AREA 67 / the hub (`bot-ops-status-board`, live campus), read [AREA67.md](AREA67.md) **first**. That overlay selects Plus-adapted roles (Heavy orchestrates + critic, Cursor is the worker). Do **not** also read the unused workflow. Do not mix Plus and Pro. Do not replace `World3D` with the Vesper demo.
+
 Your first step is to determine which workflow to use:
+- If AREA67.md applies, follow that overlay and only the Plus workflow it names.
 - If the user told you to use the Plus or Pro workflow explicitly, that's your answer
 - If not, check if the user is on a low or high tier coding subscription. "Low tier" means ChatGPT Plus or equivalent. "High tier" means ChatGPT Pro. For low-tier subscriptions, use the Plus workflow. For high-tier, use the Pro workflow.
 
@@ -46,4 +51,3 @@ If the user gives a time budget, record the time at start of the loop (after loc
 Don't degrade visual fidelity to hit the time budget. Don't take shortcuts. It's better to hit the time limit with meaningful, beautiful progress than with something roughly complete but ugly.
 
 If the user doesn't give a time budget, run until you hit an exit criterion, but warn that this may consume a lot of tokens.
-
