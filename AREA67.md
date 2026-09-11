@@ -9,20 +9,18 @@ Dream Loop is a **process**, not a renderer. Do **not** replace AREA 67 `World3D
 
 AREA 67 uses **Plus-adapted** only. Do not read `references/pro-mode/workflow.md` for hub work.
 
-Zeref 2026-09-11 18:16 ET role flip:
+Zeref 2026-09-11 18:16 ET role flip, updated 18:38 ET:
 
 | Role | Seat | Job |
 | --- | --- | --- |
-| Director | Zeref | Art OK / live deploy |
-| Manager, processor, shipper | cursor-ultra | Clock in, radio, packets, critic handoff, PRs, live ship |
-| Artist + critic | grok-heavy | Dream `target.png`, score live vs target |
-| Coder | claude | **Code only.** One visual gap per handoff. No radio strategy, no deploy, no skill register |
+| Director + coder | claude | Slice code. World3D lights/fog/wet ground. Numeric critic. |
+| Manager, processor, shipper | cursor-ultra | Clock in, radio, packets, PRs, live ship |
+| Artist + critic | grok-heavy | Dream `target.png` from live campus shot, score live vs target, station sprites |
 | Target images | Grok Imagine | Exact in-engine screenshot, not concept art |
+| Final OK | Zeref | Art OK / live deploy |
 
 No Fal / Tripo / Trellis until Zeref gives keys.
 No Blender until Claude Friday / keys exist. Do not invent Claude `kind.{sha12}.png` hashes.
-
-Claude never runs Dream Loop as judge + builder. Cursor never writes the slice. Heavy never merges.
 
 ## Loop
 
@@ -63,26 +61,35 @@ Do not edit in a Dream Loop pass:
 
 Do not deploy AREA 67 from **this** skill repo.
 
-## Night palette (locked unless Heavy revises)
+## Night palette (H4 — measured from Heavy 25 stills, 2026-09-11)
 
-- background `#0b100c`
-- fog `#0a140e`
-- accent `#76b900` / `#bef264`
-- tile-sand `#3a3424` / `#2c271c`
-- tile-sand2 `#322c1e` / `#241f16`
-- tile-path `#4a4536` / `#353126`
-- tile-pad `#3f4a40` / `#2a332c`
-- tile-plaza `#2f3830` / `#222a24`
-- tile-water `#12301c` / `#0a1c12`
-- tile-fence `#1a2218` / `#4a5540`
+Claude hue census on the Imagine set. This replaces the old `#0b100c` green-black block, which oversold lime ~20x.
 
-Look-dev: night classified campus. Gold key from the Well. Teal rim from comms. Glass + stone, not flat boxes. Pals stay readable chips.
+- background `#000000` pure black void. No sky, no horizon, no haze, no blue-hour panorama.
+- stone mid `#1c2328` to `#2d2e30` desaturated cool grey
+- highlight mean `#8f7c67` warm
+- hue budget of saturated pixels:
+  - amber / orange 15–45deg ~69%
+  - cool blue 210–225deg ~17%
+  - lime 105–120deg ~3.5% MAX
+- lime is ACCENT ONLY: Well ring, Altar runes, Spector scan. Never ambient, never ground.
+- signature: wet stone, vertical specular streaks under every practical, shallow puddles, near-zero ambient fill so geometry reads by highlight not fill.
+
+Live 1.4.1 gap (Claude critic, campus only, HUD excluded): amber 0.0% vs 69.3% target. HemisphereLight 2.1 floods teal. That is the slice to close.
+
+Deprecated (do not code to these):
+
+- `#0b100c` / `#0a140e` green-black
+- lime as ambient `#76b900` / `#bef264`
+- Codex blue-hour panorama `/environments/area67-bluehour-panorama.png`
 
 ## Skill lock
 
 Repo: https://github.com/DarkWzrd-Zeref/dream-loop
 Claude packet: [packets/A67-DREAMLOOP-CLAUDE.json](packets/A67-DREAMLOOP-CLAUDE.json)
 Altar record: [packets/SKILL-ALTAR.json](packets/SKILL-ALTAR.json)
+
+Skill Altar write from grok-heavy is locked (needs seat Bearer). Cursor or operator can stamp.
 
 ## Exit
 
