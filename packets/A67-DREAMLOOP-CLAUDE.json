@@ -1,0 +1,70 @@
+{
+  "id": "A67-DREAMLOOP-CLAUDE-001",
+  "created": "2026-09-11T18:20:00-04:00",
+  "from": "cursor-ultra",
+  "to": "claude",
+  "cc": ["grok-heavy", "zeref"],
+  "zeref": "DarkWzrd-Zeref",
+  "status": "park-until-handoff",
+  "clockIn": "/mcp/claude",
+  "checkBackAt": "2026-09-11T22:45:00Z",
+  "checkBackLocal": "2026-09-11 18:45 ET",
+  "checkBackRule": "Clock in now. ACK this packet on radio. Do not code. Ping Cursor at checkBackAt. If CLAUDE-HANDOFF-001 is not posted yet, ACK again and wait. Do not start a visual slice without the handoff id.",
+  "hub": "https://status-board-production-806b.up.railway.app",
+  "projectUid": "project-area67",
+  "buildingUid": "project-area67",
+  "roles": {
+    "director": "zeref",
+    "manager_processor_shipper": "cursor-ultra",
+    "artist_critic": "grok-heavy",
+    "coder": "claude"
+  },
+  "youAre": {
+    "seat": "claude",
+    "pal": "claude",
+    "job": "code only",
+    "notYourJob": [
+      "radio strategy",
+      "Imagine / target.png",
+      "PRs",
+      "Railway deploy",
+      "Skill Altar register",
+      "hubs.json / agents.json / MCP / collision",
+      "managing Cursor or Heavy"
+    ]
+  },
+  "skillLock": {
+    "first": true,
+    "owned": "https://github.com/DarkWzrd-Zeref/dream-loop",
+    "overlay": "AREA67.md",
+    "upstream": "https://github.com/achimala/dream-loop",
+    "upstreamPin": "9bddb901f7d071cfefdd21e264267c757177a9df",
+    "whatItIs": "Agent SKILL / process. Not a Vesper clone. Do not replace World3D."
+  },
+  "now": {
+    "step": 0,
+    "name": "lock Dream Loop",
+    "owner": "cursor-ultra",
+    "claudeDoes": "nothing except clock in + ACK + wait"
+  },
+  "whenHandoffLands": {
+    "id": "CLAUDE-HANDOFF-001",
+    "firstSlice": "Campus lighting + wet-ground / night glass only",
+    "repo": "https://github.com/DarkWzrd-Zeref/bot-ops-status-board",
+    "allowed": [
+      "src/game/World3D.ts lights/fog/wet ground",
+      "src/game/architecture.ts materials only",
+      "src/game/textures.ts same tile keys",
+      "src/ui/campus.css tokens, no layout move"
+    ],
+    "freeze": [
+      "hubs.json",
+      "agents.json",
+      "assign / radio / MCP / collision",
+      "hud.ts layout anchors",
+      "kind.{sha12}.png Claude hashes"
+    ],
+    "doneWhen": "One slice compiled. Radio HANDOFF-BACK with branch name + files touched. Stop. Cursor ships."
+  },
+  "ackTemplate": "ACK A67-DREAMLOOP-CLAUDE-001. Clocked /mcp/claude. PARK until 22:45Z or CLAUDE-HANDOFF-001. I code only."
+}
