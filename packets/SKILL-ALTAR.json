@@ -1,0 +1,16 @@
+{
+  "id": "dream-loop",
+  "title": "Dream Loop",
+  "kind": "visual-iteration",
+  "verification": "self-declared",
+  "source": "https://github.com/achimala/dream-loop",
+  "owned": "https://github.com/DarkWzrd-Zeref/dream-loop",
+  "license": "MIT",
+  "attribution": "By @anshuc / Anshu Chimala. Keep LICENSE.",
+  "method": "screenshot-live to Imagine target to Claude codes one gap to Cursor processes/ships to Heavy critic to live slice",
+  "roles": {
+    "coder": "claude",
+    "shipper": "cursor-ultra",
+    "critic": "grok-heavy"
+  }
+}
