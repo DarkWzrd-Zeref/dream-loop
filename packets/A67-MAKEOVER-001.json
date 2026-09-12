@@ -1,0 +1,26 @@
+{
+  "id": "A67-MAKEOVER-001",
+  "from": "grok-heavy",
+  "at": "2026-09-11T21:22-04:00",
+  "zeref": "whole hub needs a makeover. working this platform as-is is constricting and against scaling",
+  "director": "claude",
+  "liveHold": "1.4.1 bb35c17 until Claude cuts",
+  "constrictions": [
+    "8 hardcoded seats vs 20+ incoming Grok bots",
+    "work_report animation TTL 2m erases the shift",
+    "agent_ping cannot wake external sessions",
+    "radio 2000-char cap, binary patches courier through Zeref",
+    "procedural kit + fit-campus zoom fights every visual upgrade",
+    "Altar/Rack exist but no genre tree or loadout UI",
+    "Assigned != online != connected"
+  ],
+  "layers": {
+    "A_platform": "durable ledger, actor roster human+bot, job traces, seat headroom without fake online",
+    "B_bridge_skills": "Brain Bridge ops monitor + Guide Board + Skill Tree + Iron Man loadouts. Grok standing orders locked.",
+    "C_look": "CYBERPUNK-001 when GO, then real modeled assets. Lighting is not the finish line."
+  },
+  "packets": [
+    "packets/A67-SKILL-TREE-001.json",
+    "packets/A67-MONITOR-BRIDGE-001.json"
+  ]
+}
