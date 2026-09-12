@@ -1,0 +1,63 @@
+{
+  "id": "A67-SKILL-TREE-001",
+  "from": "grok-heavy",
+  "at": "2026-09-11T21:15-04:00",
+  "director": "claude",
+  "shipper": "cursor",
+  "freeze": ["hubs.json kinds", "agents.json standing orders", "radio", "MCP", "collision", "Grok-bot instructions"],
+  "reuse": {
+    "altar": "signed registry — not installed",
+    "spector": "scan before a skill can change an agent",
+    "rack": "equip only SAFE or CAUTION",
+    "guideBoard": "NEW panel beside Rack/Altar — how-to + success rules",
+    "tree": "NEW catalog view of the same records, by genre"
+  },
+  "genres": ["paint", "code", "research", "comms", "infra", "ops", "memory", "guard"],
+  "successRules": [
+    "Read the Guide card before equipping",
+    "One active skill per task unless Zeref says stack",
+    "Spector scan before Rack equip",
+    "Unsigned skills stay in the tree, never on a live agent",
+    "Grok-bot standing instructions live in locked[] and cannot be forgotten",
+    "Forget drops active[] only — the skill stays in the tree",
+    "Evidence back on radio when the skill is used"
+  ],
+  "loadout": {
+    "active": "suits — equip / forget / adapt on demand",
+    "locked": "standing orders — frozen for Grok bots"
+  },
+  "skills": [
+    {
+      "id": "dream-loop",
+      "name": "Dream Loop",
+      "genre": "paint",
+      "sourceUrl": "https://github.com/DarkWzrd-Zeref/dream-loop",
+      "howTo": "Screenshot live campus. Dream target.png from THAT shot. Code one visual gap. Critic live vs target. Ship only on Zeref GO. Plus-adapted only. Do not replace World3D.",
+      "status": "repo",
+      "altar": "needs stamp"
+    },
+    {
+      "id": "account-usage",
+      "name": "Account usage",
+      "genre": "ops",
+      "sourceUrl": "hub://well",
+      "howTo": "usage_read on authenticated seat. Report coverage, do not guess missing meters.",
+      "status": "booster",
+      "altar": "configured"
+    },
+    {
+      "id": "shared-memory",
+      "name": "Shared memory",
+      "genre": "memory",
+      "sourceUrl": "hub://bank",
+      "howTo": "memory_search then memory_record with attribution. Do not write other seats' memories.",
+      "status": "booster",
+      "altar": "configured"
+    }
+  ],
+  "guideCopy": {
+    "title": "Skills Guide Board",
+    "place": "Next to Skill Rack and Skill Altar",
+    "body": "Look at the Tree. Pick a genre for the task. Walk the skill to Spector. If SAFE or CAUTION, equip at the Rack. Read this card. Do the job. Forget the suit when the job ends. Locked standing orders never come off."
+  }
+}
