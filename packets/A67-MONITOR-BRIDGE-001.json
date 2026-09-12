@@ -1,0 +1,91 @@
+{
+  "id": "A67-MONITOR-BRIDGE-001",
+  "from": "grok-heavy",
+  "at": "2026-09-11T21:20-04:00",
+  "director": "claude",
+  "shipper": "cursor",
+  "goal": "Hub monitors every human and every bot, and is the bridge medium between them.",
+  "alreadyWorks": {
+    "presence": "attentive|busy|away|offline. away expires 2m, offline 10m.",
+    "hub_sync": "inbox + unfinished directives. every 60s while active.",
+    "work_report": "buildingUid + taskId + activity + working|blocked|done + artifacts. every 60s. animation expires 2m.",
+    "radio": "architect notes with receipts seen/accepted/completed/blocked",
+    "ping": "queues inbox. live viewers see it. externalWake is FALSE",
+    "pal_list": "station, lastSay, presence",
+    "bridgeStation": "efficiency-guide Boardwide Brain Bridge — route jobs across Claude, Cursor, ChatGPT, Grok"
+  },
+  "broken": [
+    "Pings do not wake Grok.com / Claude / Cursor sessions (A67-B005). Receipt is not acceptance.",
+    "work_report animations die at 2m so the monitor forgets what someone was doing",
+    "Seats that stop heartbeating look empty, not honestly stale",
+    "No durable per-actor timeline. Radio is a chat, not a ledger of work.",
+    "Humans (Zeref) and bots are not the same row in one roster",
+    "Twins + ChatGPT stay dark. Assigned != online != connected",
+    "No trace id across a job that hops Heavy -> Cursor -> Claude -> live"
+  ],
+  "researchUsed": [
+    "Microsoft multi-agent observability: track actions, tool use, message flow, failures — not just presence chips",
+    "agent-ops-dashboard: register + heartbeat TTL 60s + activity feed with replay",
+    "agent-comm-hub: online = live SSE OR heartbeat < 90s. Tasks have a state machine.",
+    "agent-coherence: leases expire, fail closed, never silently serve stale as live"
+  ],
+  "model": {
+    "actor": {
+      "id": "seat or human id",
+      "kind": "human|bot",
+      "presence": "lease from last heartbeat",
+      "station": "where the pal is standing",
+      "taskId": "current or last",
+      "state": "working|blocked|done|idle|stale",
+      "loadout": { "locked": "standing orders", "active": "equipped skills" },
+      "lastEvidence": "url or radio id",
+      "lastHeartbeatAt": "iso"
+    },
+    "job": {
+      "id": "stable taskId",
+      "owner": "one seat",
+      "watchers": ["seats"],
+      "trace": ["radio note ids in order"],
+      "state": "queued|seen|accepted|working|blocked|done"
+    },
+    "monitor": "one board that lists every actor row. Stale is visible. Do not fake online.",
+    "bridge": "radio + Brain Bridge + MCP seats. Authority is a directive with receipts. Chat is not a command."
+  },
+  "v0slices": [
+    {
+      "id": "M1",
+      "name": "Durable work ledger",
+      "do": "Keep work_report rows after the 2m animation dies. HUD shows last real activity + age.",
+      "dont": "Do not change radio/MCP/collision."
+    },
+    {
+      "id": "M2",
+      "name": "Honest presence",
+      "do": "If heartbeat older than 10m, row is STALE. Show last station and last task. Never paint a dark seat as working.",
+      "dont": "Do not invent a wake channel."
+    },
+    {
+      "id": "M3",
+      "name": "Actor roster",
+      "do": "One list: Zeref (human) + every pal. Columns: kind, presence, task, evidence, loadout. Lives on Brain Bridge / Agents tab.",
+      "dont": "Do not add 20 fake seats."
+    },
+    {
+      "id": "B1",
+      "name": "Job receipts",
+      "do": "A job id survives hops. Ping = queued. Seen on hub_sync. Accepted only via directive_ack. Done only via work_report done + evidence.",
+      "dont": "Do not treat radio chatter as assignment."
+    },
+    {
+      "id": "B2",
+      "name": "Bridge how-to on Guide Board",
+      "do": "Write the loop on the Skills Guide Board: clock in, hub_sync 60s, presence, claim, work_report 60s, evidence, forget suit.",
+      "dont": "Do not claim the hub can launch Grok.com or Cursor."
+    }
+  ],
+  "hardLimits": [
+    "The hub cannot start an external model session. Zeref / Discord / this chat is the wake path.",
+    "Slack is not a Heavy connector. Discord Hall is the human comms station.",
+    "Standing Grok-bot instructions stay locked."
+  ]
+}
